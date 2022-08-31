@@ -1,0 +1,94 @@
+
+ .jumbotron img {
+    height: 760px !important;
+    width: 100% !important;
+    margin-top: -80px;
+} 
+
+.jumbotron {
+    image-rendering: auto;
+    display: block;
+    height: auto;
+    width: 100% !important;
+    height: 700px !important;
+} 
+
+.card-p {
+    border: black solid 1px;
+    border-radius: 65%;
+    height: 130px;
+    width: 130px;
+}
+
+svg {
+    display: center; 
+    margin-top: 25px; 
+    margin-left: 18px;
+    height: 70px;
+    width: 70px;
+}
+
+h2 {
+    font-size: 40px;
+}
+h3 {
+    font-size: 2rem !important;
+}
+
+.bg-image {
+    background-image: url('https://image.cnbcfm.com/api/v1/image/107033018-1647627522460-gettyimages-1169477405-img_4967.jpeg?v=1647627565&w=1920&h=1080');
+    height: 100%;
+    width: 100%;
+    z-index: -999;
+    margin-top: -18px;
+    padding: 25px 30px;
+    background-repeat: no-repeat;
+}
+
+.carousel-item img {
+    height: 250px;
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .jumbotron img {
+        height: 500px !important;
+        width: 100% !important;
+        /* margin-top: -80px; */
+    } 
+    
+    .jumbotron {
+        image-rendering: auto;
+        display: block;
+        height: auto;
+        width: 100% !important;
+        height: 500px !important;
+    } 
+    
+    .card-p {
+        border: black solid 1px;
+        border-radius: 65%;
+        height: 100px;
+        width: 100px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 2rem !important;
+    }
+
+    svg {
+        display: center; 
+        margin-top: 20px; 
+        margin-left: 12px;
+        height: 50px;
+        width: 50px;
+    }
+
+    .bg-image {
+        background-color: black;
+    }
+}

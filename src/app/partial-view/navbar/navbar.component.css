@@ -1,0 +1,21 @@
+
+
+.circular_image {
+    border-radius: 50px 50px;
+    overflow: hidden;
+    background-color: blue;
+    /* commented for demo
+    float: left;
+    margin-left: 125px;
+    margin-top: 20px;
+    */
+    
+    /*for demo*/
+    display:inline-block;
+    vertical-align:middle;
+  }
+
+  .nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
