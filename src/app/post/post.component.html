@@ -49,7 +49,7 @@
                         <p>{{p.postDescription}}</p>
                     </div>
                     <div class="row">
-                        <img *ngFor="let li of postImages" class="col-sm card-img-bottom mb-1" [src]='imagerServer + li.imageFilename' style="width: 50%;">
+                        <img class="col-sm" *ngFor="let li of p.imageDetails;"  [src]='imagerServer + li.imageFilename' style="width: 50%;">
                     </div>
                     <hr class="mt-1">
                     <div class="row">

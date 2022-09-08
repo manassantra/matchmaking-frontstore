@@ -59,10 +59,6 @@ export class PostComponent implements OnInit {
     })
     this.postSrvc.getPost(user.authId).subscribe(res=>{
       this.post = res;
-      for(const f of this.post) {
-        this.postImages = f.imageDetails;
-        console.log(this.postImages)
-      }
     });
   }
 
