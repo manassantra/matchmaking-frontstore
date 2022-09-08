@@ -1,0 +1,8 @@
+.container-fluid {
+    background-image: linear-gradient(to right top, #051937, #2b2455, #5a286b, #8f2474, #c21870);
+}
+
+* {
+    font-weight: 700;
+}
+

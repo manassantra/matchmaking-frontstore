@@ -1,0 +1,115 @@
+<!-- Create  User Feeds / Posts -->
+
+<div class="row">
+    <div class="col-sm mt-2">
+        <button type="button" class="btn btn-outline-matchmaking" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Post News / Memory
+        </button>
+
+       
+    </div>
+</div>
+
+
+
+<div class="row text-center mt-4 mb-4 match-header">
+    <div class="col"><i class="bi bi-broadcast bi-lg"></i> &nbsp; Posted Feeds</div>
+</div>
+<!-- Display  User Feeds / Posts -->
+
+<div class="row">
+    <div class="col-sm">
+
+        <div class="card" *ngFor="let p of post | orderBy: 'createdAt': true">
+            <div class="card-body">
+                <div class="row d-flex justify-content-between">
+                    <div class="col d-flex justify-content-start">
+                        <a href="#" class="nav-link">
+                            <img class="circular_image" src={{profilePic}} height="40" width="40" alt="">
+                            {{fullname}}
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-start">
+                        <small style="font-weight: 400; font-size:xl-smaller; margin-top: 10px;">Posted <b>{{p.createdAt | amTimeAgo}}</b></small>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <button class="btn btn-outline-white nav-item">
+                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots"></i>
+                            </a>
+                            <ul class="dropdown-menu text-center">
+                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                            </ul>
+                          </button>
+                    </div>
+                </div>
+                <div class="row" style="border: 1px solid black; margin: 5px 5px -10px 5px; padding: 20px 20px;">
+                    <div class="-row" style="font-weight: 400; font-family: arial; font-size: small;">
+                        <p>{{p.postDescription}}</p>
+                    </div>
+                    <div class="row">
+                        <img *ngFor="let li of postImages" class="col-sm card-img-bottom mb-1" [src]='imagerServer + li.imageFilename' style="width: 50%;">
+                    </div>
+                    <hr class="mt-1">
+                    <div class="row">
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-outline-secondary">Like</button>
+                            <button class="btn btn-sm btn-outline-secondary">Comment</button>
+                            <button class="btn btn-sm btn-outline-secondary">Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Create Post Modal -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+    <form #loginForm="ngForm" class="form-group" (submit)="createPost()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create new post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+            <div class="row">
+                <textarea id="sample" [(ngModel)]="modal.postDescription" class="form-control" name="postDescription" rows="5" placeholder="Create your post here..."></textarea> 
+            </div>
+            <div class="row">
+                <div class="col" style="margin-top: -25px;">
+                    <label for="" name="postBatchId" [(ngModel)]="modal.postBatchId" #postBatchId></label>
+                    <input class="form-control" #file multiple type="file" (change)="onChange(file.files)">
+                </div>
+                <div class="col" *ngIf="uploadResponse">
+                    <img style="height: 70px; width: 100px" *ngFor="let url of urls" [src]="url" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col d-flex justify-content-end m-1">
+                    <button type="submit" class="col btn btn-sm btn-outline-matchmaking">Post</button>
+                    <button class="col btn btn-sm btn-secondary">Reset</button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>

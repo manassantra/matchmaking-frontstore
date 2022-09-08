@@ -12,10 +12,16 @@ import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { FileUploadModule } from 'ng2-file-upload';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatchesComponent } from './matches/matches.component';
 import { InboxComponent } from './inbox/inbox.component';
+import { UploadavtarComponent } from './helper-view/uploadavtar/uploadavtar.component';
+import { UploadmultipicComponent } from './helper-view/uploadmultipic/uploadmultipic.component';
+import { PostComponent } from './post/post.component';
+import { MomentModule } from 'ngx-moment';
+import { OrderModule } from 'ngx-order-pipe';
+
+
 
 
 @NgModule({
@@ -28,7 +34,10 @@ import { InboxComponent } from './inbox/inbox.component';
     NavbarComponent,
     DashboardComponent,
     MatchesComponent,
-    InboxComponent
+    InboxComponent,
+    UploadavtarComponent,
+    UploadmultipicComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +52,11 @@ import { InboxComponent } from './inbox/inbox.component';
     FormsModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
-    FileUploadModule
+    MomentModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA,]
 })
 export class AppModule { }

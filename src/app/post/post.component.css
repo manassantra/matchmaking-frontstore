@@ -1,0 +1,32 @@
+.circular_image {
+    border-radius: 50px 50px;
+    overflow: hidden;
+    background-color: blue;
+    /* commented for demo
+    float: left;
+    margin-left: 125px;
+    margin-top: 20px;
+    */
+    
+    /*for demo*/
+    display:inline-block;
+    vertical-align:middle;
+  }
+
+  /* .file {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+  }
+    
+    input:hover + label,
+    input:focus + label {
+      transform: scale(1.02);
+      cursor: pointer !important;
+    } */
+
+.preview {
+  height: 50px;
+  width: 85px;
+}

@@ -1,1 +1,44 @@
-<p>dashboard works!</p>
+<div class="container-fluid" style="margin: 0px; padding: 20px;">
+    <div class="container text-center py-4 my-2 rounded"> <!-- style="background-color: aliceblue;"-->
+        <div class="row text-dark">
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="row">
+                        <!-- Upload Pic Module -->
+                        <app-uploadavtar></app-uploadavtar>
+                        <b class="card-header">{{username}}</b>
+                    </div>
+                    <div class="row text-center m-2 mt-4">
+                        <small style="font-weight: 400;">Profile ID</small>
+                        <b>{{uid}}</b>
+                    </div>
+                    <hr>
+                    <div class="row text-center m-2">
+                        <small style="font-weight: 400;">Account Type</small>
+                        <b>{{AccountType}} &nbsp; <a href="#">[Upgrade]</a></b>
+                    </div>
+                    <hr>
+                    <div class="row m-2 mb-4">
+                        <small style="font-weight: 400;">Email Id. <b>{{emailVerification}}</b> &nbsp;
+                            <i class="bi" [ngClass]="{'bi-shield-fill-check text-success': this.userDetails.isEmailVerified,'bi-shield-fill-x text-warning': !this.userDetails.isEmailVerified}"></i>
+                        </small>
+                        <small style="font-weight: 400;">Mobile No. <b>{{mobVerification}}</b> &nbsp;
+                            <i class="bi" [ngClass]="{'bi-shield-fill-check text-success': this.userDetails.isMobileVerified,'bi-shield-fill-x text-warning': !this.userDetails.isMobileVerified}"></i>
+                        </small>
+                        <b><a href="#">[Verify]</a></b>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <app-post></app-post>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="card">
+                    
+                </div>
+            </div>
+          </div>
+    </div>
+</div>

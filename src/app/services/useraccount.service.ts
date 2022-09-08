@@ -10,7 +10,7 @@ import { User } from '../model/user';
 
 export class UseraccountService {
   
-baseapiDEV = 'https://localhost:7002/api/useraccount/';
+baseapiDEV = 'https://localhost:7002/api/';
 // baseapiPRD = '';
 
 
@@ -23,7 +23,7 @@ userDetails() {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${user.token}`
     })
-    return this.http.get(this.baseapiDEV + user.authId , {headers: header}).pipe(
+    return this.http.get(this.baseapiDEV + 'UserAccount/' + user.authId , {headers: header}).pipe(
       map((res) => {
        return res ;
       }),
@@ -42,6 +42,12 @@ handleError(error: HttpErrorResponse) {
     msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
   }
   return throwError(msg);
+}
+
+// getProfilePic
+getPicture(id:any){
+  console.log(this.baseapiDEV + 'profilepic/' + id);
+ return this.http.get(this.baseapiDEV + 'Profilepic/' + id);
 }
 
 }

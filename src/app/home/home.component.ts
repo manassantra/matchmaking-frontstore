@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     this.authSrvc.userLogin(this.model).subscribe(res=>{
       this.toaster.success("Login Successful 😊", "SUCCESS !")
       setTimeout(() => {
-        window.location.replace('');
+        window.location.replace('dashboard');
       }, 1500);
     })
   }
