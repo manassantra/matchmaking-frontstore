@@ -9,7 +9,7 @@ import { UseraccountService } from 'src/app/services/useraccount.service';
 })
 export class UploadavtarComponent implements OnInit {
 
-  imagerServer = "http://localhost/Images/"
+  imagerServer = "http://localhost/ProfileImages/"
   avtarUrl: any = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE26NjQaonqTRt7BXD_87Iuukitk_kcGBv3w&usqp=CAU';
   imageDetails: any = {};
   constructor(private usraccSrvc: UseraccountService) { }

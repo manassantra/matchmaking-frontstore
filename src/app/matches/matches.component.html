@@ -1,1 +1,85 @@
-<p>matches works!</p>
+<div class="container mt-4 mb-4">
+    <div class="row">
+        <div class="col-sm-12 col-12 d-flex justify-content-center">
+            <div class="col-sm-8">
+                <div class="card p-3">
+                    <div class="row">
+                        <div class="col-3 text-center">
+                            <app-uploadavtar></app-uploadavtar>
+                        </div>
+                        <div class="col-9 text-center">
+                            <div class="row mt-5">
+                                <div class="col-5"><h4><b>{{'MANAS SANTRA'}}</b></h4></div>
+                                <div class="col-3">[<b>ID : </b>{{'SH456789'}}]</div>
+                                <div class="col-1">
+                                    <button class="btn btn-sm btn-secondary">Edit</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <ul class="nav nav-pills col-7 m-2">
+                                    <li class="nav-item col">
+                                      <a class="nav-link text-secondary disabled" aria-current="page"><b>{{postCount}}</b> Posts</a>
+                                    </li>
+                                    <li class="nav-item col">
+                                      <a class="nav-link text-secondary disabled"><b>{{followings.length}}</b> Following</a>
+                                    </li>
+                                    <li class="nav-item col">
+                                      <a class="nav-link text-secondary disabled"><b>{{followers.length}}</b> Followers</a>
+                                    </li>
+                                  </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <em>{{'Jane Doe Lorem ipsum dolor sit, amet consectetur adipisicing elit 📷✈️🏕️'}}</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row" style="margin-top: -15px;">
+                        <ul class="nav nav-tabs nav-justified d-flex justify-content-between" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+                                Rrquest (1)
+                              </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                                Matches (2)
+                              </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
+                                Find Match
+                              </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="notifc-tab" data-bs-toggle="tab" data-bs-target="#notifc-tab-pane" type="button" role="tab" aria-controls="notifc-tab-pane" aria-selected="false">
+                                Notifications ({{notifications}})
+                              </button>
+                            </li>
+                          </ul>
+                          <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
+
+                            <!-- Notifications -->
+                            <div class="tab-pane fade" id="notifc-tab-pane" role="tabpanel" aria-labelledby="notifc-tab" tabindex="0">
+                                <div class="list-group mt-2">
+                                    <a href="#" class="list-group-item list-group-item-action py-2 disabled row" aria-current="true" *ngFor="let li of notificationList">
+                                      <li style="list-style: none ;"><img style="margin-right: 20px;" height="23" src="https://icon-library.com/images/facebook-notification-icon-vector/facebook-notification-icon-vector-10.jpg" alt="">
+                                      <b class="text-secondary mt-2">{{li.notification}}.</b></li>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action text-center" *ngIf="notifications > 10">
+                                      <img src="https://i.stack.imgur.com/hzk6C.gif" height="30" width="100" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -20,14 +20,17 @@ export class PostComponent implements OnInit {
   postModal : any = {};
   fileList: any;
   post: any = [];
+  publicPost: any = [];
   postImages: any = [];
+  postUserDetails: any = [];
   imageUrl: any;
   postImageUrl = [];
   userDetails: any;
   fullname: any;
   getImage: any;
   profilePic: any;
-  imagerServer = "http://localhost/Images/"
+  galleryImagerServer = "http://localhost/GalleryImages/"
+  profileImagerServer = "http://localhost/ProfileImages/"
   id: any;
   urls: any = []
   uploadResponse: any ;
@@ -54,11 +57,18 @@ export class PostComponent implements OnInit {
       if(this.getImage.imageFilename == null) {
         this.profilePic = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE26NjQaonqTRt7BXD_87Iuukitk_kcGBv3w&usqp=CAU"
       } else {
-        this.profilePic = this.imagerServer + this.getImage.imageFilename
+        this.profilePic = this.profileImagerServer + this.getImage.imageFilename
       }
     })
     this.postSrvc.getPost(user.authId).subscribe(res=>{
       this.post = res;
+      console.log(this.post)
+      this.postSrvc.getPublicPost(user.authId).subscribe(res=>{
+        this.publicPost = res;
+        this.publicPost.forEach((e:any) => {
+           this.post.push(e);
+        });
+      })
     });
   }
 
@@ -102,7 +112,7 @@ export class PostComponent implements OnInit {
       .subscribe(res => {
         this.uploadResponse = res ;
         for (const f of this.uploadResponse) {
-          this.urls.push(this.imagerServer + f.fileName);
+          this.urls.push(this.galleryImagerServer + f.fileName);
           this.postBatchId = f.postBatchId
         }
         console.log(this.uploadResponse);
