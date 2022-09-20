@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(//db.onlinewebfonts.com/c/3dd6e9888191722420f62dd54664bc94?family=Myriad+Pro);
+* {
+  font-family: 'Myriad Pro', sans-serif;
+  font-size: 16.5px;                                         
+}
 
 .btn-outline-matchmaking {
     background-color: #e10175;

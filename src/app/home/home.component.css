@@ -1,9 +1,14 @@
-
+.box {
+    height: 60vh;
+}
+ 
+ 
  .jumbotron img {
     height: 760px !important;
     width: 100% !important;
     margin-top: -80px;
 } 
+
 
 .jumbotron {
     image-rendering: auto;
@@ -19,6 +24,11 @@
     height: 130px;
     width: 130px;
 }
+
+video::-webkit-media-controls {
+    display: none;
+  }
+
 
 svg {
     display: center; 
